@@ -308,7 +308,6 @@ function LeadsGrid() {
 
       const response = await api.get('/leads', {
         params: { page: currentPage, limit, ...filterParams },
-        headers: { 'Cache-Control': 'no-cache' },
       });
 
       console.log('API response:', {

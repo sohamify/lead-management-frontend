@@ -7,9 +7,8 @@ const api = axios.create({
   withCredentials: true,
 });
 
-
 api.interceptors.request.use((config) => {
-  console.log('Request:', config.url, config.params, config.headers);
+  console.log('Request:', config.url, config.params, config.headers, 'withCredentials:', config.withCredentials);
   return config;
 }, (error) => {
   console.error('Request error:', error);
@@ -19,7 +18,7 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.error('Response error:', error.response?.status, error.response?.data);
+    console.error('Response error:', error.response?.status, error.response?.data, 'Headers:', error.response?.headers);
     return Promise.reject(error);
   }
 );
