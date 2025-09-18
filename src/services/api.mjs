@@ -2,12 +2,12 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://lead-management-backend-bj9q.onrender.com', // Match your backend URL
+  baseURL: 'https://lead-management-backend-bj9q.onrender.com/api', 
   headers: { 'Content-Type': 'application/json' },
-  withCredentials: true, // Enable sending cookies (JWT)
+  withCredentials: true,
 });
 
-// Optional: Add request/response interceptors for debugging
+
 api.interceptors.request.use((config) => {
   console.log('Request:', config.url, config.params, config.headers);
   return config;
