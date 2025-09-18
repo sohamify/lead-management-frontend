@@ -1,0 +1,67 @@
+/* LeadsGrid.css */
+
+/* Customize the AG Grid theme to match the Tailwind design */
+
+/* Main grid container */
+.ag-theme-alpine-leads {
+  --ag-foreground-color: #374151; /* gray-700 */
+  --ag-background-color: #f3f4f6; /* gray-100 */
+  --ag-header-background-color: #111827; /* slate-900 */
+  --ag-header-foreground-color: #ffffff;
+  --ag-row-hover-color: #e0f2fe; /* blue-50 hover */
+  --ag-odd-row-background-color: #f9fafb; /* gray-50 */
+  --ag-border-color: #e5e7eb; /* gray-200 */
+  --ag-cell-horizontal-padding: 1.5rem; /* px-6 */
+  --ag-cell-vertical-padding: 1rem; /* py-4 */
+  --ag-font-family: 'Inter', sans-serif;
+  --ag-font-size: 14px;
+}
+
+/* Header styling */
+.ag-theme-alpine-leads .ag-header-cell-text {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em; /* tracking-wider */
+}
+
+/* Row styling for even/odd rows */
+.ag-theme-alpine-leads .ag-row-even {
+  background-color: rgba(255, 255, 255, 0.6); /* bg-white/60 */
+}
+
+.ag-theme-alpine-leads .ag-row-odd {
+  background-color: rgba(249, 250, 251, 0.6); /* bg-gray-50/60 */
+}
+
+/* Remove default AG Grid borders to use Tailwind's rounded corners */
+.ag-theme-alpine-leads .ag-root-wrapper,
+.ag-theme-alpine-leads .ag-root-wrapper-body,
+.ag-theme-alpine-leads .ag-header-container,
+.ag-theme-alpine-leads .ag-center-cols-container,
+.ag-theme-alpine-leads .ag-header,
+.ag-theme-alpine-leads .ag-body-viewport {
+  border: none !important;
+}
+
+.ag-theme-alpine-leads .ag-header-cell,
+.ag-theme-alpine-leads .ag-cell {
+  border-right: 1px solid var(--ag-border-color);
+}
+
+.ag-theme-alpine-leads .ag-header-row {
+  background: linear-gradient(to right, #1f2937, #111827); /* from-slate-800 to-slate-900 */
+}
+
+.ag-theme-alpine-leads .ag-row {
+  transition: all 0.2s ease-in-out;
+}
+
+.ag-theme-alpine-leads .ag-row:hover {
+  background: linear-gradient(to right, #eff6ff, #e0e7ff); /* hover:from-blue-50 hover:to-indigo-50 */
+}
+
+/* Custom cell padding for better alignment with Tailwind's classes */
+.ag-cell.grid-cell-padding {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
